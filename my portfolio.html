@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhyuday Narayan Vaishnav | Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        color: #4a5568;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #1a202c;
+      }
+      header {
+        background-color: #ffffff;
+        padding: 22px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      header h1 {
+        margin-bottom: 12px;
+        color: #2b6cb0;
+        font-size: 28px;
+        letter-spacing: 1px;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      nav a {
+        text-decoration: none;
+        color: #4a5568;
+        margin: 5px 10px;
+        font-weight: 600;
+        font-size: 15px;
+        transition: color 0.3s;
+      }
+      nav a:hover {
+        color: #2b6cb0;
+      }
+      #home {
+        text-align: center;
+        padding: 90px 20px;
+        background-color: #edf2f7;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      #home h2 {
+        font-size: 36px;
+        color: #1a202c;
+        margin-bottom: 10px;
+      }
+      #home h3 {
+        color: #2b6cb0;
+        margin-bottom: 16px;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      #home p {
+        max-width: 650px;
+        margin: auto;
+        color: #4a5568;
+        font-size: 17px;
+      }
+      .main-button {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 24px;
+        background-color: #2b6cb0;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        transition:
+          background-color 0.3s,
+          transform 0.2s;
+      }
+      .main-button:hover {
+        background-color: #1a365d;
+        transform: translateY(-2px);
+      }
+      section {
+        padding: 60px 20px;
+        text-align: center;
+        scroll-margin-top: 80px;
+      }
+      section h2 {
+        color: #1a202c;
+        margin-bottom: 35px;
+        font-size: 28px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+      .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+      }
+      .profile-info {
+        text-align: center;
+      }
+      .profile-info h3 {
+        color: #2b6cb0;
+        margin-bottom: 12px;
+        font-size: 22px;
+      }
+      .profile-info p {
+        margin-bottom: 12px;
+      }
+      .social-links {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      .social-links a {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background-color: #4a5568;
+        padding: 10px 18px;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+      .social-links a:hover {
+        background-color: #2b6cb0;
+      }
+      .info-box {
+        background-color: white;
+        padding: 30px;
+        max-width: 650px;
+        margin: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+      }
+      .info-box h3 {
+        color: #2b6cb0;
+        margin-bottom: 15px;
+      }
+      .info-box p {
+        margin-bottom: 10px;
+        font-size: 17px;
+      }
+      .info-box a {
+        color: #2b6cb0;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .info-box a:hover {
+        text-decoration: underline;
+      }
+      .card-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        max-width: 1100px;
+        margin: auto;
+      }
+      .card {
+        background-color: white;
+        width: 240px;
+        padding: 25px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+      .card h3 {
+        color: #2b6cb0;
+        margin-bottom: 12px;
+        font-size: 20px;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+      .project-card {
+        background-color: white;
+        padding: 30px 25px;
+        width: 320px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+      .project-card h3 {
+        color: #2b6cb0;
+        margin-bottom: 12px;
+      }
+      .project-card p {
+        margin-bottom: 15px;
+        flex-grow: 1;
+      }
+      .project-button {
+        display: inline-block;
+        margin-top: auto;
+        padding: 10px 20px;
+        background-color: #2b6cb0;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+      .project-button:hover {
+        background-color: #1a365d;
+      }
+      .education-box {
+        background-color: white;
+        padding: 25px;
+        max-width: 700px;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        text-align: left;
+        border-left: 6px solid #2b6cb0;
+      }
+      .education-box h3 {
+        color: #1a202c;
+        margin-bottom: 8px;
+        font-size: 20px;
+      }
+      .education-box p {
+        margin-bottom: 5px;
+        color: #4a5568;
+      }
+      footer {
+        background-color: #ffffff;
+        text-align: center;
+        padding: 25px;
+        color: #718096;
+        border-top: 1px solid #e2e8f0;
+      }
+      footer p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+      @media (max-width: 768px) {
+        header {
+          padding: 15px;
+        }
+        nav a {
+          display: inline-block;
+          margin: 5px;
+          font-size: 14px;
+        }
+        #home {
+          padding: 60px 15px;
+        }
+        #home h2 {
+          font-size: 28px;
+        }
+        section {
+          padding: 40px 15px;
+        }
+        .card,
+        .project-card {
+          width: 100%;
+          max-width: 350px;
+        }
+        .info-box {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Abhyuday's Portfolio</h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="home">
+      <h2>Hello, I'm Abhyuday Narayan Vaishnav!</h2>
+      <h3>Student @ Bosscoder School of Technology</h3>
+      <p>
+        Welcome to my space. I'm passionate about coding, robotics, and music. I
+        love building logic-driven solutions and exploring how technology
+        interacts with the physical world.
+      </p>
+      <a href="#about" class="main-button">Discover More</a>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="profile">
+        <div class="profile-info">
+          <h3>Hey, I'm Abhyuday</h3>
+          <p>
+            I'm currently a student at Bosscoder School of Technology. I have a
+            deep interest in software development, robotics, and music
+            production. I enjoy writing clean code and solving complex problems.
+          </p>
+          <p>
+            Whether I'm writing Java and Python scripts, designing web
+            interfaces, or working on hardware, I'm always looking to expand my
+            skill set and build something impactful.
+          </p>
+          <div class="social-links">
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Arsenal</h2>
+      <div class="card-container">
+        <div class="card">
+          <h3>Java & Python</h3>
+          <p>
+            Core programming, backend logic, data structures, and
+            problem-solving.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Frontend Web</h3>
+          <p>
+            Building responsive and modern interfaces using HTML, CSS, and
+            JavaScript.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Robotics</h3>
+          <p>
+            Hardware integration, automation logic, and microcontroller
+            programming.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Music Technology</h3>
+          <p>
+            Audio manipulation, digital audio workstations, and sound design.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div class="card-container">
+        <div class="project-card">
+          <h3>Robotic Arm Controller</h3>
+          <p>
+            A Python-based script mapped to hardware components to control and
+            automate a robotic arm's movements with precision.
+          </p>
+          <a href="#" class="project-button">View Code</a>
+        </div>
+        <div class="project-card">
+          <h3>Music Visualizer App</h3>
+          <p>
+            A web application built using HTML, CSS, and JavaScript that takes
+            audio input and creates dynamic, real-time visualizations.
+          </p>
+          <a href="#" class="project-button">View Live</a>
+        </div>
+        <div class="project-card">
+          <h3>Minimalist Portfolio</h3>
+          <p>
+            A responsive, clean, and modern personal website built from scratch
+            to showcase my journey, projects, and skills.
+          </p>
+          <a href="#" class="project-button">View Repository</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education-box">
+        <h3>Bosscoder School of Technology</h3>
+        <p><strong>Current Pursuit</strong></p>
+        <p>
+          Advancing my skills in modern software development, computer science
+          fundamentals, and system design.
+        </p>
+      </div>
+      <div class="education-box">
+        <h3>Sri Chaitanya Junior College</h3>
+        <p><strong>Class 11 & 12</strong></p>
+        <p>
+          Built a strong foundation in science and mathematics, sparking my
+          initial interest in coding and robotics.
+        </p>
+      </div>
+      <div class="education-box">
+        <h3>Kendriya Vidyalaya (KVS)</h3>
+        <p><strong>Class 10</strong></p>
+        <p>
+          Early academic years focused on foundational learning and analytical
+          thinking.
+        </p>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h2>Experience & Interests</h2>
+      <div class="card-container">
+        <div class="project-card">
+          <h3>Robotics Enthusiast</h3>
+          <p>
+            Actively learning and experimenting with sensors, motors, and
+            microcontrollers to bridge the gap between software and hardware.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3>Coding Challenges</h3>
+          <p>
+            Regularly solving logical problems in Java and Python to sharpen
+            algorithmic thinking and write more efficient code.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <div class="info-box">
+        <h3>Let's collaborate on something cool.</h3>
+        <br />
+        <p><strong>Email:</strong> abhyuday.tech@example-domain.com</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/" target="_blank"
+            >github.com/abhyuday-nv</a
+          >
+        </p>
+        <p>
+          <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/" target="_blank"
+            >linkedin.com/in/abhyudaynv</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Abhyuday Narayan Vaishnav | Portfolio</p>
+      <p>Built with logic and creativity.</p>
+    </footer>
+  </body>
+</html>
